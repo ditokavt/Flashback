@@ -21,7 +21,6 @@ $("h1").click(function(){
 })
 
 $(".mode").click(function(){
-    startOver();
     $("#level-title").text("Press A Key to Start");
     var mode =$(this).attr("id");
     $(".mode").removeClass("on");
@@ -85,7 +84,8 @@ function gameOver(){
     }, 200);
     var audio = new Audio("sounds/wrong.mp3");
     audio.play();
-    $("h1").text("Game Over, Press Any Key to Restart");
+    $("h1").text("Game Over, your score is " + level + " Press Any Key to Restart");
+    startOver();
 }
 
 function startOver(){
@@ -98,7 +98,7 @@ function animatePress(currentColor) {
   $("#" + currentColor).addClass("pressed");
   setTimeout(function () {
     $("#" + currentColor).removeClass("pressed");
-  }, 100);
+  }, 200);
 }
 
 function playSound(curentColor){
