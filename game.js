@@ -13,6 +13,12 @@ $(document).keypress(function(){
         started = true;
     }
 })
+$("h1").click(function(){
+    if(!started){
+        nextSequence();
+        started = true;
+    }
+})
 
 $(".mode").click(function(){
     startOver();
@@ -120,10 +126,14 @@ var isMobile = window.matchMedia("(max-width: 768px)");
 function handleMobileCheck(width) {
     if (width.matches) {
         backToStart();
+        startOver();
+        $("h1").text("start with click here");
     } else {
         $(".mode-container").show();
         buttonColors = easyColors;
         showButtons();
+        startOver();
+        $("h1").text("Press A Key to Start");
     }
 }
 handleMobileCheck(isMobile);

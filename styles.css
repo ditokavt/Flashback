@@ -87,3 +87,16 @@ body {
 .hide{
   display: none;
 }
+
+@media (max-width: 768px) {
+  .btn {
+    height: 120px;
+    width: 120px;
+    margin: 15px;
+  }
+
+  #level-title {
+    font-size: 2rem;
+    margin: 10%;
+  }
+}
